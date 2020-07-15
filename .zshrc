@@ -8,7 +8,8 @@ PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magent
 export ZSH=$HOME/.oh-my-zsh
 export UPDATE_ZSH_DAYS=3
 DISABLE_AUTO_TITLE="true"
-plugins=(git vi-mode mix tmux)
+DISABLE_AUTO_UPDATE=true
+plugins=(git vi-mode mix tmux docker)
 source $ZSH/oh-my-zsh.sh
 
 # Export
@@ -18,9 +19,6 @@ alias kfiles=$kfiles
 alias cfiles=$cfiles
 
 # Aliases
-alias confzsh='vim ~/.zshrc'
-alias confvim='vim ~/.vimrc'
-alias ref='source ~/.zshrc'
 alias conftmux='vim ~/.tmux.conf'
 alias cp="cp -v"
 alias rm="rm -v"
@@ -38,7 +36,7 @@ SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
 # Basic auto/tab complete:
-autoload -U compinit
+autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
@@ -61,8 +59,4 @@ export DISPLAY=$(awk '/nameserver/ {print $2}' /etc/resolv.conf):0.0
 
 # Load zsh-syntax-highlighting; should be last.
 source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# fzf stuff - commented out cause wsl IO issues
-# FZF_DEFAULT_OPTS='--height 40% --layout=reverse --extended'
-# FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 
