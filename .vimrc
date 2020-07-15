@@ -48,10 +48,12 @@ Plug 'morhetz/gruvbox'
 Plug 'junegunn/goyo.vim'
 Plug 'slashmili/alchemist.vim'
 Plug 'elixir-editors/vim-elixir'
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mbbill/undotree'
+Plug 'mattn/emmet-vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 call plug#end()
 
@@ -94,9 +96,6 @@ nnoremap } <C-w>>
 nnoremap { <C-w><lt>
 nnoremap = <C-w>=
 
-" NERDTree
-nnoremap <leader>n :NERDTreeToggle<CR>
-
 "alias ESC with jj
 inoremap jj <ESC>
 inoremap jk <ESC>
@@ -123,5 +122,32 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='gruvbox'
 
+" Fzf
+let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit',
+  \ 'ctrl-y': {lines -> setreg('*', join(lines, "\n"))}}
 
+" Launch fzf with CTRL+P.
+nnoremap <silent> <C-p> :FZF -m<CR>
+
+" Map a few common things to do with FZF.
+nnoremap <silent> <Leader><Enter> :buffers<CR>
+nnoremap <silent> <Leader>l :lines<CR>
+
+" Rg command.
+" Example: :Rg myterm -g '*.md'
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \ "rg --column --line-number --no-heading --color=always --smart-case " .
+  \ <q-args>, 1, fzf#vim#with_preview(), <bang>0)
+
+" Nerdtree
+let g:NERDTreeShowHidden=1
+let g:NERDTreeAutoDeleteBuffer=1
+let g:NERDTreeQuitOnOpen=0
+
+nnoremap <silent> <expr> <Leader>n g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"

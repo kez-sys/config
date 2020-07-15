@@ -57,6 +57,10 @@ LS_COLORS=$LS_COLORS:'ow=1;34:' ; export LS_COLORS
 # X server - may cause delay
 export DISPLAY=$(awk '/nameserver/ {print $2}' /etc/resolv.conf):0.0
 
+# fzf
+export FZF_DEFAULT_COMMAND="rg --hidden --files --follow --glob '!.git'"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Load zsh-syntax-highlighting; should be last.
 source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
