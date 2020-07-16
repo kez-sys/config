@@ -122,6 +122,10 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='gruvbox'
 
+" Emmet
+let g:user_emmet_mode='n'
+let g:user_emmet_leader_key=','
+
 " Fzf
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 
