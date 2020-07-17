@@ -9,7 +9,7 @@ export ZSH=$HOME/.oh-my-zsh
 export UPDATE_ZSH_DAYS=3
 DISABLE_AUTO_TITLE="true"
 DISABLE_AUTO_UPDATE=true
-plugins=(git vi-mode mix tmux docker)
+plugins=(git vi-mode mix tmux docker ssh-agent)
 source $ZSH/oh-my-zsh.sh
 
 # Export
@@ -19,7 +19,6 @@ alias kfiles=$kfiles
 alias cfiles=$cfiles
 
 # Aliases
-alias conftmux='vim ~/.tmux.conf'
 alias cp="cp -v"
 alias rm="rm -v"
 alias mv="mv -v"
