@@ -13,6 +13,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mbbill/undotree'
 Plug 'mattn/emmet-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'tpope/vim-surround'
+" Plug 'andrewradev/tagalong.vim'
 
 call plug#end()
 
@@ -120,7 +122,7 @@ colorscheme hyper
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='gruvbox'
+let g:airline_theme='badwolf'
 
 " Emmet
 let g:user_emmet_mode='n'
@@ -148,6 +150,9 @@ command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \ "rg --column --line-number --no-heading --color=always --smart-case " .
   \ <q-args>, 1, fzf#vim#with_preview(), <bang>0)
+
+" tagalong
+" let g:tagalong_verbose = 1
 
 " Nerdtree
 let g:NERDTreeShowHidden=1
