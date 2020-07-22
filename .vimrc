@@ -1,5 +1,24 @@
 " Kez's Vim
 
+" Plugins
+call plug#begin('~/.vim/plugged')
+
+Plug 'morhetz/gruvbox'
+Plug 'junegunn/goyo.vim'
+Plug 'slashmili/alchemist.vim'
+Plug 'elixir-editors/vim-elixir'
+Plug 'preservim/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'mbbill/undotree'
+Plug 'mattn/emmet-vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+call plug#end()
+
+" Set leader key to a comma (;)
+let mapleader = " "
+
 " Basic Config
 syntax on
 filetype plugin indent on
@@ -40,25 +59,6 @@ set hlsearch
 
 " Disable Bold Text
 set t_md=
-
-" Plugins
-call plug#begin('~/.vim/plugged')
-
-Plug 'morhetz/gruvbox'
-Plug 'junegunn/goyo.vim'
-Plug 'slashmili/alchemist.vim'
-Plug 'elixir-editors/vim-elixir'
-Plug 'preservim/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'mbbill/undotree'
-Plug 'mattn/emmet-vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-
-call plug#end()
-
-" Set leader key to a comma (;)
-let mapleader = " "
 
 " Disable Automatic comment on newline
 autocmd Filetype * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -114,8 +114,8 @@ noremap <leader>;t :term<cr>
 noremap <C-a> :q!<cr>
 
 " Set colorscheme
-colorscheme gruvbox
-set background=dark
+colorscheme hyper
+" set background=dark
 
 " Airline
 let g:airline_powerline_fonts = 1
