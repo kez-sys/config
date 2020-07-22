@@ -19,6 +19,8 @@ alias kfiles=$kfiles
 alias cfiles=$cfiles
 
 # Aliases
+alias qpow="vim $kfiles/Dump/template"
+alias gkjsf='gcloud beta compute ssh --zone "us-east1-b" "kjsf" --project "kjsfxyz"'
 alias cp="cp -v"
 alias rm="rm -v"
 alias mv="mv -v"

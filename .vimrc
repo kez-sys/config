@@ -115,7 +115,7 @@ noremap <C-a> :q!<cr>
 
 " Set colorscheme
 colorscheme hyper
-" set background=dark
+" set background=dark // new theme
 
 " Airline
 let g:airline_powerline_fonts = 1
