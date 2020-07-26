@@ -20,12 +20,11 @@ alias cfiles=$cfiles
 
 # Aliases
 alias qpow="vim $kfiles/Dump/template"
-alias gkjsf='gcloud beta compute ssh --zone "us-east1-b" "kjsf" --project "kjsfxyz"'
 alias cp="cp -v"
 alias rm="rm -v"
 alias mv="mv -v"
 alias mkdir="mkdir -v"
-alias expl='explorer.exe .'
+alias explo='explorer.exe .'
 alias vmshut='cmd.exe | wsl.exe --shutdown'
 alias win~='/mnt/c/Users/Asus/'
 alias desk~='/mnt/c/Users/Asus/Desktop'
