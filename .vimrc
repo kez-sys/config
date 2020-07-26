@@ -14,7 +14,9 @@ Plug 'mbbill/undotree'
 Plug 'mattn/emmet-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'tpope/vim-surround'
-" Plug 'andrewradev/tagalong.vim'
+Plug 'andrewradev/tagalong.vim'
+Plug 'prettier/vim-prettier', { 'do': 'npn install' }
+Plug 'preservim/nerdcommenter'
 
 call plug#end()
 
@@ -126,7 +128,7 @@ let g:airline_theme='badwolf'
 
 " Emmet
 let g:user_emmet_mode='n'
-let g:user_emmet_leader_key=','
+let g:user_emmet_leader_key='.'
 
 " Fzf
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
@@ -151,8 +153,8 @@ command! -bang -nargs=* Rg
   \ "rg --column --line-number --no-heading --color=always --smart-case " .
   \ <q-args>, 1, fzf#vim#with_preview(), <bang>0)
 
-" tagalong
-" let g:tagalong_verbose = 1
+" Tagalong
+let g:tagalong_verbose = 1
 
 " Nerdtree
 let g:NERDTreeShowHidden=1
