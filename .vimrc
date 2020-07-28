@@ -3,7 +3,6 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
 
-Plug 'morhetz/gruvbox'
 Plug 'junegunn/goyo.vim'
 Plug 'slashmili/alchemist.vim'
 Plug 'elixir-editors/vim-elixir'
@@ -17,6 +16,9 @@ Plug 'tpope/vim-surround'
 Plug 'andrewradev/tagalong.vim'
 Plug 'prettier/vim-prettier', { 'do': 'npn install' }
 Plug 'preservim/nerdcommenter'
+Plug 'ap/vim-css-color'
+Plug 'KabbAmine/vCoolor.vim'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -155,6 +157,12 @@ command! -bang -nargs=* Rg
 
 " Tagalong
 let g:tagalong_verbose = 1
+
+" vCoolor
+let g:vcoolor_map = '<leader>h'
+let g:vcoolor_lowercase = 1
+let g:vcoolor_disable_mappings = 1
+let g:vcoolor_custom_picker = 'zenity --title "Zenity" --color-selection --color '
 
 " Nerdtree
 let g:NERDTreeShowHidden=1
