@@ -7,8 +7,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'slashmili/alchemist.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'preservim/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'mbbill/undotree'
 Plug 'mattn/emmet-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -121,12 +120,7 @@ noremap <C-a> :q!<cr>
 
 " Set colorscheme
 colorscheme hyper
-" set background=dark // new theme
-
-" Airline
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='badwolf'
+set background=dark
 
 " Emmet
 let g:user_emmet_mode='n'
@@ -170,3 +164,9 @@ let g:NERDTreeAutoDeleteBuffer=1
 let g:NERDTreeQuitOnOpen=0
 
 nnoremap <silent> <expr> <Leader>n g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
+
+" Lightline
+let g:lightline = {
+      \ 'colorscheme': 'darcula',
+      \ }
+set laststatus=2
