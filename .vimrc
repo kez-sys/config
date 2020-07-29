@@ -118,8 +118,18 @@ noremap <leader>;t :term<cr>
 " Abort Window
 noremap <C-a> :q!<cr>
 
+" Color settings
+
+if (has("termguicolors"))
+  " https://github.com/vim/vim/issues/993#issuecomment-255651605
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+  set termguicolors
+endif
+
 " Set colorscheme
-colorscheme hyper
+colorscheme chalk
 set background=dark
 
 " Emmet
@@ -167,6 +177,6 @@ nnoremap <silent> <expr> <Leader>n g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" :
 
 " Lightline
 let g:lightline = {
-      \ 'colorscheme': 'darcula',
+      \ 'colorscheme': 'simpleblack',
       \ }
 set laststatus=2
