@@ -49,7 +49,7 @@ set expandtab
 
 set wildmenu
 set wildchar=<TAB>
-set colorcolumn=80
+" Set colorcolumn=80
 
 set splitright splitbelow
 
@@ -101,7 +101,7 @@ nnoremap } <C-w>>
 nnoremap { <C-w><lt>
 nnoremap = <C-w>=
 
-"alias ESC with jj
+" Alias ESC with jj
 inoremap jj <ESC>
 inoremap jk <ESC>
 

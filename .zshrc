@@ -20,11 +20,11 @@ alias kfiles=$kfiles
 alias cfiles=$cfiles
 
 # Aliases
-alias qpow="vim $kfiles/Dump/template"
 alias cp="cp -v"
 alias rm="rm -v"
 alias mv="mv -v"
 alias mkdir="mkdir -v"
+alias qpow="vim $kfiles/Dump/template"
 alias explo='explorer.exe .'
 alias vmshut='cmd.exe | wsl.exe --shutdown'
 alias win~='/mnt/c/Users/Asus/'
