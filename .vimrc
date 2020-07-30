@@ -13,7 +13,6 @@ Plug 'mattn/emmet-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'tpope/vim-surround'
 Plug 'andrewradev/tagalong.vim'
-" Plug 'prettier/vim-prettier', { 'do': 'npn install' }
 Plug 'preservim/nerdcommenter'
 Plug 'ap/vim-css-color'
 Plug 'KabbAmine/vCoolor.vim'
@@ -162,7 +161,7 @@ let g:tagalong_verbose = 1
 let g:vcoolor_map = '<leader>h'
 let g:vcoolor_lowercase = 1
 let g:vcoolor_disable_mappings = 1
-let g:vcoolor_custom_picker = 'zenity --title "Zenity" --color-selection --color '
+let g:vcoolor_custom_picker = 'zenity --title "Color Pick" --color-selection --color '
 
 " Nerdtree
 let g:NERDTreeShowHidden=1
@@ -263,7 +262,7 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
-nmap <leader><F2> <Plug>(coc-rename)
+nmap <F2> <Plug>(coc-rename)
 
 " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)
@@ -276,27 +275,6 @@ augroup mygroup
   " Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
-
-" Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-" Remap keys for applying codeAction to the current buffer.
-nmap <leader>ac  <Plug>(coc-codeaction)
-" Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
-
-" Map function and class text objects
-" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
-xmap if <Plug>(coc-funcobj-i)
-omap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap af <Plug>(coc-funcobj-a)
-xmap ic <Plug>(coc-classobj-i)
-omap ic <Plug>(coc-classobj-i)
-xmap ac <Plug>(coc-classobj-a)
-omap ac <Plug>(coc-classobj-a)
 
 " Use CTRL-S for selections ranges.
 " Requires 'textDocument/selectionRange' support of LS, ex: coc-tsserver
@@ -329,17 +307,18 @@ nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols.
 nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+nnoremap <silent><nowait> <C-j> :<C-u>CocNext<CR>
 " Do default action for previous item.
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+nnoremap <silent><nowait> <C-k>  :<C-u>CocPrev<CR>
 " Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+nnoremap <silent><nowait> <space>r :<C-u>CocListResume<CR>
 
-" Coc-prettier
-nnoremap <leader>p :CocCommand prettier.formatFile<CR>
+" Coc custom mappings
+noremap <silent><nowait> <leader>p :CocCommand prettier.formatFile<CR>
+noremap <silent><nowait> <leader>j :CocCommand document.jumpToNextSymbol<CR>
 
 " Lightline
 let g:lightline = {
-      \ 'colorscheme': 'simpleblack',
+      \ 'colorscheme': 'powerlineish',
       \ }
 set laststatus=2
