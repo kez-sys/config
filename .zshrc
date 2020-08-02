@@ -10,7 +10,7 @@ export ZSH=$HOME/.oh-my-zsh
 export UPDATE_ZSH_DAYS=3
 DISABLE_AUTO_TITLE="true"
 DISABLE_AUTO_UPDATE=true
-plugins=(git vi-mode mix tmux docker ssh-agent)
+plugins=(git vi-mode mix tmux ssh-agent)
 source $ZSH/oh-my-zsh.sh
 
 # Export
@@ -24,7 +24,8 @@ alias cp="cp -v"
 alias rm="rm -v"
 alias mv="mv -v"
 alias mkdir="mkdir -v"
-alias qpow="vim $kfiles/Dump/template"
+alias qopw="vim $kfilesDump/template"
+alias utyr="cd $kfiles/dotfiles"
 alias explo='explorer.exe .'
 alias vmshut='cmd.exe | wsl.exe --shutdown'
 alias win~='/mnt/c/Users/Asus/'
