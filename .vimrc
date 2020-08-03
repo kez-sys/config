@@ -70,7 +70,7 @@ autocmd Filetype * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 nnoremap <leader><space> :noh<cr>
 
 " Open Terminal
-noremap <leader>t :term<cr>
+noremap <F3> :term<cr>
 
 " Undo tree
 nnoremap <F5> :UndotreeToggle<cr>
@@ -99,8 +99,11 @@ nnoremap } <C-w>>
 nnoremap { <C-w><lt>
 nnoremap = <C-w>=
 
-" Alias ESC with jj
-inoremap jj <ESC>
+" Full screen then :wq
+noremap <silent><leader>v :tab split<CR>
+
+" Alias Esc with jj
+inoremap jj <esc>
 inoremap jk <ESC>
 
 " Indent guide
@@ -108,10 +111,10 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 
 " Remove search highlight
-nnoremap <leader><space> :noh<cr>
+nnoremap <silent><leader><space> :noh<cr>
 
 " Open Terminal
-noremap <leader>;t :term<cr>
+noremap <F3> :term<cr>
 
 " Abort Window
 noremap <C-a> :q!<cr>
@@ -189,7 +192,7 @@ set nobackup
 set nowritebackup
 
 " Give more space for displaying messages.
-set cmdheight=2
+set cmdheight=1
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
