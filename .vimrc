@@ -103,12 +103,12 @@ nnoremap = <C-w>=
 noremap <silent><leader>v :tab split<CR>
 
 " Alias Esc with jj
-inoremap jj <esc>
-inoremap jk <ESC>
+" inoremap jj <esc>
+" inoremap jk <esc>
 
 " Indent guide
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 4
+let g:indent_guides_guide_size = 2
 
 " Remove search highlight
 nnoremap <silent><leader><space> :noh<cr>
