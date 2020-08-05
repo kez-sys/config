@@ -9,7 +9,6 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'preservim/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'mbbill/undotree'
-Plug 'mattn/emmet-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'tpope/vim-surround'
 Plug 'andrewradev/tagalong.vim'
@@ -102,10 +101,6 @@ nnoremap = <C-w>=
 " Full screen then :wq
 noremap <silent><leader>v :tab split<CR>
 
-" Alias Esc with jj
-" inoremap jj <esc>
-" inoremap jk <esc>
-
 " Indent guide
 let g:indent_guides_start_level = 4
 let g:indent_guides_guide_size = 2
@@ -131,10 +126,6 @@ endif
 " Set colorscheme
 colorscheme chalk
 set background=dark
-
-" Emmet
-let g:user_emmet_mode='n'
-let g:user_emmet_leader_key='.'
 
 " Fzf
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
