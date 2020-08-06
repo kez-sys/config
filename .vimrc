@@ -152,10 +152,13 @@ command! -bang -nargs=* Rg
 let g:tagalong_verbose = 1
 
 " vCoolor
-let g:vcoolor_map = '<leader>h'
+let g:vcoolor_map = '<C-k>h'
+let g:vcool_ins_rgb_map = '<C-k>r'
+let g:vcool_ins_hsl_map = '<C-k>H'
+let g:vcool_ins_rgba_map = '<C-k>R'
 let g:vcoolor_lowercase = 1
 let g:vcoolor_disable_mappings = 1
-let g:vcoolor_custom_picker = 'zenity --title "Color Pick" --color-selection --color '
+let g:vcoolor_custom_picker = 'zenity --title "Color Wheel" --color-selection --color '
 
 " Nerdtree
 let g:NERDTreeShowHidden=1
