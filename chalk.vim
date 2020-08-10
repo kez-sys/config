@@ -1,8 +1,8 @@
 " Vim color scheme
-" Name:         medicchalk.vim
+" Name:         chalk.vim
 " Author:       Konnor Rogers <konnor7414@gmail.com>
 " Version:      1.0
-" GetLatestVimScripts: 1891 1 :AutoInstall: medicchalk.vim
+" GetLatestVimScripts: 1891 1 :AutoInstall: chalk.vim
 
 " Based on the VividChalk colorscheme made by Tpope which is based on Vibrant Ink
 " Distributable under the same terms as Vim itself (see :help license)
@@ -15,7 +15,7 @@ if exists("syntax_on")
    syntax reset
 endif
 
-let colors_name = "medic_chalk"
+let colors_name = "chalk"
 
 " First two functions adapted from inkpot.vim
 
