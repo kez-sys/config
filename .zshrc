@@ -10,7 +10,7 @@ export ZSH=$HOME/.oh-my-zsh
 export UPDATE_ZSH_DAYS=3
 DISABLE_AUTO_TITLE="true"
 DISABLE_AUTO_UPDATE=true
-plugins=(git vi-mode mix tmux ssh-agent)
+plugins=(zsh-syntax-highlighting git vi-mode mix tmux ssh-agent)
 source $ZSH/oh-my-zsh.sh
 
 # Export
@@ -50,7 +50,6 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
-source $ZSH/oh-my-zsh.sh
 
 # WSL remove console highlight
 LS_COLORS=$LS_COLORS:'ow=1;34:' ; export LS_COLORS
@@ -62,6 +61,5 @@ export DISPLAY=$(awk '/nameserver/ {print $2}' /etc/resolv.conf):0.0
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Load zsh-syntax-highlighting; should be last.
-source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH/oh-my-zsh.sh
 
