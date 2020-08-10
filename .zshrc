@@ -8,6 +8,9 @@ DISABLE_AUTO_UPDATE=true
 plugins=(zsh-syntax-highlighting git vi-mode mix tmux ssh-agent)
 ZSH_THEME="kez"
 source $ZSH/oh-my-zsh.sh
+ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=green,bold
+ZSH_HIGHLIGHT_STYLES[precommand]=fg=green,bold
+ZSH_HIGHLIGHT_STYLES[arg0]=fg=green,bold
 
 # Export
 export kfiles='/mnt/k'
