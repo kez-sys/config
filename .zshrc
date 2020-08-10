@@ -1,9 +1,9 @@
 # Kez's zsh
 
 # Enable colors and change prompt:
-autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-PS2="   %B%F{green}...> "
+#autoload -U colors && colors
+#PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+#PS2="   %B%F{green}...> "
 
 # Oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
@@ -11,6 +11,7 @@ export UPDATE_ZSH_DAYS=3
 DISABLE_AUTO_TITLE="true"
 DISABLE_AUTO_UPDATE=true
 plugins=(zsh-syntax-highlighting git vi-mode mix tmux ssh-agent)
+ZSH_THEME="kez"
 source $ZSH/oh-my-zsh.sh
 
 # Export
