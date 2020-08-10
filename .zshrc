@@ -50,7 +50,6 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
-
 # WSL remove console highlight
 LS_COLORS=$LS_COLORS:'ow=1;34:' ; export LS_COLORS
 
@@ -60,6 +59,3 @@ export DISPLAY=$(awk '/nameserver/ {print $2}' /etc/resolv.conf):0.0
 # fzf
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-source $ZSH/oh-my-zsh.sh
-
