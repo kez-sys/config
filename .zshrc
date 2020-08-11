@@ -41,6 +41,7 @@ alias explo='explorer.exe .'
 alias vmshut='cmd.exe | wsl.exe --shutdown'
 alias win~='/mnt/c/Users/ksf'
 alias desk~='/mnt/c/Users/kjsf/Desktop'
+alias graph='git log --all --decorate --oneline --graph'
 
 # Use vim keys n tab complete menu:
 zstyle ':completion:*' list-colors
