@@ -42,24 +42,18 @@ alias vmshut='cmd.exe | wsl.exe --shutdown'
 alias win~='/mnt/c/Users/ksf'
 alias desk~='/mnt/c/Users/kjsf/Desktop'
 
-#History in cache directory:
-HISTSIZE=10000
-SAVEHIST=10000
-HISTFILE=~/.cache/zsh/history
-
-# Basic auto/tab complete:
-autoload -U compinit && compinit
-zstyle ':completion:*' menu select
-zmodload zsh/complist
-compinit
-_comp_options+=(globdots)		# Include hidden files.
-
 # Use vim keys n tab complete menu:
+zstyle ':completion:*' list-colors
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
+
+# History in cache directory:
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.cache/zsh/history
 
 # WSL remove console highlight
 LS_COLORS=$LS_COLORS:'ow=1;34:' ; export LS_COLORS
