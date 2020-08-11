@@ -318,6 +318,6 @@ noremap <silent><nowait> <leader>j :CocCommand document.jumpToNextSymbol<CR>
 
 " Lightline
 let g:lightline = {
-      \ 'colorscheme': 'powerlineish',
+      \ 'colorscheme': 'simpleblack',
       \ }
 set laststatus=2
