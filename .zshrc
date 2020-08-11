@@ -8,9 +8,21 @@ DISABLE_AUTO_UPDATE=true
 plugins=(zsh-syntax-highlighting git vi-mode mix tmux ssh-agent)
 ZSH_THEME="kez"
 source $ZSH/oh-my-zsh.sh
+
+# ZSH Highlighting
+ZSH_HIGHLIGHT_STYLES[autodirectory]=fg=blue,bold
+ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=black,bold
 ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=yellow,bold
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=yellow,bold
 ZSH_HIGHLIGHT_STYLES[arg0]=fg=yellow,bold
+ZSH_HIGHLIGHT_STYLES[path]=fg=white,bold
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=white,bold
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=white,bold
+ZSH_HIGHLIGHT_STYLES[argument]=fg=magenta,bold
+ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=yellow,bold
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=yellow,bold
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=yellow,bold
+ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]=fg=yellow,bold
 
 # Export
 export kfiles='/mnt/k'
@@ -27,8 +39,8 @@ alias qopw="vim $kfiles/Dump/template"
 alias utyr="vim $kfiles/Dump/d.list"
 alias explo='explorer.exe .'
 alias vmshut='cmd.exe | wsl.exe --shutdown'
-alias win~='/mnt/c/Users/Asus/'
-alias desk~='/mnt/c/Users/Asus/Desktop'
+alias win~='/mnt/c/Users/ksf'
+alias desk~='/mnt/c/Users/kjsf/Desktop'
 
 #History in cache directory:
 HISTSIZE=10000
