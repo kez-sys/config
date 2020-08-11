@@ -60,8 +60,6 @@ set incsearch
 set showmatch
 set hlsearch
 
-" Disable Bold Text
-set t_md=
 
 " Disable Automatic comment on newline
 autocmd Filetype * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
