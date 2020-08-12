@@ -12,7 +12,8 @@ source $ZSH/oh-my-zsh.sh
 # ZSH Highlighting
 ZSH_HIGHLIGHT_STYLES[autodirectory]=fg=blue,bold
 ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=white
-ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=yellow,bold
+ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=magenta,bold
+ZSH_HIGHLIGHT_STYLES[alias]=fg=magenta,bold
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=yellow,bold
 ZSH_HIGHLIGHT_STYLES[arg0]=fg=yellow,bold
 ZSH_HIGHLIGHT_STYLES[path]=fg=white,bold
