@@ -43,7 +43,11 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-set cursorline
+
+" Cursor line Insert mode
+" set cursorline
+:autocmd InsertEnter * set cul
+:autocmd InsertLeave * set nocul
 
 set wildmenu
 set wildchar=<TAB>
