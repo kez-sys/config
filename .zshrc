@@ -69,5 +69,5 @@ export DISPLAY=$(awk '/nameserver/ {print $2}' /etc/resolv.conf):0.0
 
 # fzf
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
-export FZF_CTRL_T_COMMAND="rg --files --hidden --follow --glob '!.git'"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
