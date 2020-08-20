@@ -9,13 +9,14 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'preservim/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'mbbill/undotree'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'tpope/vim-surround'
 Plug 'andrewradev/tagalong.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'ap/vim-css-color'
 Plug 'KabbAmine/vCoolor.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
@@ -39,9 +40,9 @@ set backspace=indent,eol,start
 set clipboard=unnamedplus
 set mouse=a
 
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 " Cursor line Insert mode
@@ -114,9 +115,6 @@ nnoremap <silent><leader><space> :noh<cr>
 " Open Terminal
 noremap <F3> :term<cr>
 
-" Abort Window
-noremap <C-a> :q!<cr>
-
 " Color settings
 if (has("termguicolors"))
   " https://github.com/vim/vim/issues/993#issuecomment-255651605
@@ -161,7 +159,7 @@ let g:vcool_ins_hsl_map = '<C-k>H'
 let g:vcool_ins_rgba_map = '<C-k>R'
 let g:vcoolor_lowercase = 1
 let g:vcoolor_disable_mappings = 1
-let g:vcoolor_custom_picker = 'zenity --title "Color Wheel" --color-selection --color '
+let g:vcoolor_custom_picker = 'zenity --title "Zenity" --color-selection --show-palette --color '
 
 " Nerdtree
 let g:NERDTreeShowHidden=1
