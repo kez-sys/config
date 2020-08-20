@@ -40,7 +40,7 @@ alias qopw="vim $kfiles/Dump/template"
 alias utyr="vim $kfiles/Dump/d.list"
 alias explo='explorer.exe .'
 alias vmshut='cmd.exe | wsl.exe --shutdown'
-alias win~='/mnt/c/Users/ksf'
+alias win~='/mnt/c/Users/kjsf'
 alias desk~='/mnt/c/Users/kjsf/Desktop'
 alias graph='git log --all --decorate --oneline --graph'
 
