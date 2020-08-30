@@ -321,5 +321,3 @@ let g:lightline = {
       \ 'colorscheme': 'simpleblack',
       \ }
 set laststatus=2
-
-
