@@ -45,6 +45,9 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
+" Fix vim startup replace mode
+set t_u7=
+
 " Cursor line Insert mode
 " set cursorline
 :autocmd InsertEnter * set cul
@@ -322,5 +325,3 @@ let g:lightline = {
       \ }
 set laststatus=2
 
-" Fix vim startup replace mode
-set t_u7=
