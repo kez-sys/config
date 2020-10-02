@@ -168,6 +168,7 @@ let g:vcoolor_custom_picker = 'zenity --title "Zenity" --color-selection --show-
 let g:NERDTreeShowHidden=1
 let g:NERDTreeAutoDeleteBuffer=1
 let g:NERDTreeQuitOnOpen=0
+" let g:NERDTreeIgnore = ['*\.sw.?$']
 nnoremap <silent> <expr> <Leader>n g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
 
 " Coc config
