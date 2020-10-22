@@ -326,3 +326,6 @@ let g:lightline = {
       \ }
 set laststatus=2
 
+" Templating engine fix
+autocmd BufWritePre *.ejs :setfiletype html
+autocmd BufWritePost *.ejs :setfiletype jst
