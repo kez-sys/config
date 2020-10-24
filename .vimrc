@@ -121,6 +121,8 @@ noremap <silent><nowait> <leader>V :tabnew $MYVIMRC<CR>
 let g:grepper={}
 let g:grepper.tools=["rg"]
 
+xmap gr <plug>(GrepperOperator)
+
 " After searching for text, press this mapping to do a project wide find and
 " replace. It's similar to <leader>r except this one applies to all matches
 " across all files instead of just the current file.
@@ -129,12 +131,20 @@ nnoremap <Leader>R
   \ :Grepper -cword -noprompt<CR>
   \ :cfdo %s/<C-r>s//g \| update
   \<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+" The same as above except it works with a visual selection.
+xmap <Leader>R
+    \ "sy
+    \ gvgr
+    \ :cfdo %s/<C-r>s//g \| update
+     \<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 
-" Searach and replace opts
+" Search and replace opts
+nnoremap <Leader>cf :cfdo %s//g \| update
+  \<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+nnoremap <Leader>bf :bufdo %s//g \| update
+  \<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 nnoremap <Leader>r :%s///g<Left><Left>
 nnoremap <Leader>rc :%s///gc<Left><Left><Left>
-xnoremap <Leader>r :%s///g<Left><Left>
-xnoremap <Leader>rc :%s///gc<Left><Left><Left>
 
 " Full screen then :wq
 noremap <silent><leader>v :tab split<CR>
