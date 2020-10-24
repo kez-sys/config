@@ -7,6 +7,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'slashmili/alchemist.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'preservim/nerdtree'
+Plug 'itchyny/vim-gitbranch'
 Plug 'itchyny/lightline.vim'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-surround'
@@ -19,9 +20,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
-Plug 'itchyny/vim-gitbranch'
 Plug 'mhinz/vim-grepper'
-Plug 'machakann/vim-highlightedyank'
 
 call plug#end()
 
