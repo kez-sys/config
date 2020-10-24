@@ -15,8 +15,13 @@ Plug 'preservim/nerdcommenter'
 Plug 'ap/vim-css-color'
 Plug 'KabbAmine/vCoolor.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-fugitive'
+Plug 'itchyny/vim-gitbranch'
+Plug 'mhinz/vim-grepper'
+Plug 'machakann/vim-highlightedyank'
 
 call plug#end()
 
@@ -69,6 +74,7 @@ set showmatch
 set hlsearch
 
 
+
 " Disable Automatic comment on newline
 autocmd Filetype * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
@@ -105,6 +111,31 @@ nnoremap } <C-w>>
 nnoremap { <C-w><lt>
 nnoremap = <C-w>=
 
+" Pwd
+noremap <silent><nowait> <leader>p :pwd<CR>
+
+" vimrc
+noremap <silent><nowait> <leader>V :tabnew $MYVIMRC<CR>
+
+" Vimgrepper
+let g:grepper={}
+let g:grepper.tools=["rg"]
+
+" After searching for text, press this mapping to do a project wide find and
+" replace. It's similar to <leader>r except this one applies to all matches
+" across all files instead of just the current file.
+nnoremap <Leader>R
+  \ :let @s='\<'.expand('<cword>').'\>'<CR>
+  \ :Grepper -cword -noprompt<CR>
+  \ :cfdo %s/<C-r>s//g \| update
+  \<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+
+" Searach and replace opts
+nnoremap <Leader>r :%s///g<Left><Left>
+nnoremap <Leader>rc :%s///gc<Left><Left><Left>
+xnoremap <Leader>r :%s///g<Left><Left>
+xnoremap <Leader>rc :%s///gc<Left><Left><Left>
+
 " Full screen then :wq
 noremap <silent><leader>v :tab split<CR>
 
@@ -132,25 +163,45 @@ colorscheme chalk
 set background=dark
 
 " Fzf
-let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
+let $FZF_DEFAULT_OPTS = '-m --bind ctrl-a:select-all'
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit',
   \ 'ctrl-y': {lines -> setreg('*', join(lines, "\n"))}}
 
-" Launch fzf with CTRL+P.
-nnoremap <silent> <C-p> :FZF -m<CR>
+" Fzf colors
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
-" Map a few common things to do with FZF.
-nnoremap <silent> <Leader><Enter> :buffers<CR>
-nnoremap <silent> <Leader>l :lines<CR>
+" FZF Mappings
+nnoremap <silent> <C-p> :Files <CR>
+nnoremap <silent> <Leader>f :Rg <CR>
+nnoremap <silent> <Leader><Enter> :Buffers<CR>
+nnoremap <silent> <Leader>C :Commands<CR>
+nnoremap <silent> <Leader>l :BLines<CR>
+nnoremap <silent> <Leader>L :Lines<CR>
+nnoremap <silent> <Leader>M :Maps<CR>
+nnoremap <silent> <Leader>H :Helptags<CR>
+nnoremap <silent> <Leader>h :History<CR>
+nnoremap <silent> <Leader>h: :History:<CR>
+nnoremap <silent> <Leader>h/ :History/<CR>
 
-" Rg command.
+" Rg command
 command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \ "rg --column --line-number --no-heading --color=always --smart-case " .
-  \ <q-args>, 1, fzf#vim#with_preview(), <bang>0)
+      \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case "
+      \ .shellescape(<q-args>), 1, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
 
 " Tagalong
 let g:tagalong_verbose = 1
@@ -267,10 +318,6 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Symbol renaming.
 nmap <F2> <Plug>(coc-rename)
 
-" Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
@@ -299,29 +346,38 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
+
 " Show all diagnostics.
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent><nowait> <space>aC  :<C-u>CocList diagnostics<cr>
+
 " Manage extensions.
-nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+nnoremap <silent><nowait> <space>eC  :<C-u>CocList extensions<cr>
+
 " Show commands.
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+nnoremap <silent><nowait> <space>cC  :<C-u>CocList commands<cr>
+
 " Find symbol of current document.
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+nnoremap <silent><nowait> <space>oC  :<C-u>CocList outline<cr>
+
 " Search workspace symbols.
 " nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+
 " Do default action for next item.
 nnoremap <silent><nowait> <C-j> :<C-u>CocNext<CR>
+
 " Do default action for previous item.
 nnoremap <silent><nowait> <C-k>  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-nnoremap <silent><nowait> <space>r :<C-u>CocListResume<CR>
 
-" Coc custom mappings
-noremap <silent><nowait> <leader>p :CocCommand prettier.formatFile<CR>
-noremap <silent><nowait> <leader>j :CocCommand document.jumpToNextSymbol<CR>
 
 " Lightline
 let g:lightline = {
+  \ 'active': {
+      \ 'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'gitbranch#name'
+      \ },
       \ 'colorscheme': 'simpleblack',
       \ }
 set laststatus=2
