@@ -59,7 +59,6 @@ set t_u7=
 
 set wildmenu
 set wildchar=<TAB>
-" Set colorcolumn=80
 
 set splitright splitbelow
 
@@ -72,16 +71,8 @@ set incsearch
 set showmatch
 set hlsearch
 
-
-
 " Disable Automatic comment on newline
 autocmd Filetype * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-" Remove search highlight
-nnoremap <leader><space> :noh<cr>
-
-" Open Terminal
-noremap <F3> :term<cr>
 
 " Undo tree
 nnoremap <F5> :UndotreeToggle<cr>
@@ -130,7 +121,7 @@ nnoremap <Leader>R
   \ :Grepper -cword -noprompt<CR>
   \ :cfdo %s/<C-r>s//g \| update
   \<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
-" The same as above except it works with a visual selection.
+
 xmap <Leader>R
     \ "sy
     \ gvgr
@@ -154,9 +145,6 @@ let g:indent_guides_guide_size = 2
 
 " Remove search highlight
 nnoremap <silent><leader><space> :noh<cr>
-
-" Open Terminal
-noremap <F3> :term<cr>
 
 " Color settings
 if (has("termguicolors"))
