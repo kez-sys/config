@@ -4,7 +4,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/goyo.vim'
-Plug 'slashmili/alchemist.vim'
+" Plug 'slashmili/alchemist.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'preservim/nerdtree'
 Plug 'itchyny/vim-gitbranch'
@@ -21,6 +21,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-grepper'
+Plug 'mhinz/vim-mix-format'
 
 call plug#end()
 
@@ -222,6 +223,7 @@ nnoremap <silent> <expr> <Leader>n g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" :
 " Coc config
 let g:coc_global_extensions = [
   \ 'coc-snippets',
+  \ 'coc-elixir',
   \ 'coc-pairs',
   \ 'coc-tsserver',
   \ 'coc-prettier',
@@ -382,3 +384,6 @@ set laststatus=2
 " Templating engine fix
 autocmd BufWritePre *.ejs :setfiletype html
 autocmd BufWritePost *.ejs :setfiletype jst
+
+" Elixir-Mix format
+let g:mix_format_on_save = 1
