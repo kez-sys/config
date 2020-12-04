@@ -4,7 +4,7 @@ Application.put_env(:elixir, :ansi_enabled, true)
 # Letting people know what iex.exs they are using
 IO.puts(
   IO.ANSI.blink_slow() <>
-    "\nUsing Global config\n" <> IO.ANSI.reset()
+    "\nUsing IEx global config\n" <> IO.ANSI.reset()
 )
 
 # Get queue length for the IEx process
