@@ -8,6 +8,8 @@
     "jst",
     "ejs"
   ],
-  "emmet.includeLanguages": { "jst": "html" },
+  "emmet.includeLanguages": {
+    "jst": "html"
+  },
   "elixirLS.dialyzerEnabled": false
 }
