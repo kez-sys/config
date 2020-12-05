@@ -1,7 +1,9 @@
+# Kez's IEx Config
+
 # Will be using `ANSI`
 Application.put_env(:elixir, :ansi_enabled, true)
 
-# Letting people know what iex.exs they are using
+# Log IEx config
 IO.puts(
   IO.ANSI.blink_slow() <>
     "\nUsing IEx global config\n" <> IO.ANSI.reset()
@@ -17,13 +19,13 @@ end
 
 prefix =
   IO.ANSI.bright() <>
-    IO.ANSI.yellow() <>
+    IO.ANSI.white() <>
     "%prefix" <>
     IO.ANSI.reset()
 
 counter =
   IO.ANSI.bright() <>
-    IO.ANSI.white() <>
+    IO.ANSI.yellow() <>
     "%counter" <>
     IO.ANSI.reset()
 
@@ -38,8 +40,8 @@ alive =
     "*" <>
     IO.ANSI.reset()
 
-default_prompt = prefix <> "(" <> counter <> ")" <> " " <> last
-alive_prompt = prefix <> "(" <> counter <> ")" <> " " <> alive <> last
+default_prompt = prefix <> "[" <> counter <> "]" <> " " <> last
+alive_prompt = prefix <> "[" <> counter <> "]" <> " " <> alive <> last
 
 inspect_limit = 5_000
 history_size = 100
@@ -81,7 +83,7 @@ case phoenix_app do
     :ok
 
   {app, _pid} ->
-    IO.puts("Phoenix app found: #{app}\n")
+    IO.puts("Phoenix@#{app}\n")
 
     ecto_app =
       app
@@ -105,7 +107,7 @@ case phoenix_app do
         :ok
 
       true ->
-        IO.puts("Ecto app found: #{ecto_app}\n")
+        IO.puts("Ecto@#{ecto_app}\n")
 
         # Ecto Support
         import_if_available(Ecto.Query)
