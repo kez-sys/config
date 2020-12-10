@@ -1,4 +1,4 @@
-# Kez's IEx Config
+# Kez's IEx
 
 # Will be using `ANSI`
 Application.put_env(:elixir, :ansi_enabled, true)
@@ -6,7 +6,7 @@ Application.put_env(:elixir, :ansi_enabled, true)
 # Log IEx config
 IO.puts(
   IO.ANSI.blink_slow() <>
-    "\nUsing IEx global config\n" <> IO.ANSI.reset()
+    "\nUsing Kez's IEx config\n" <> IO.ANSI.reset()
 )
 
 # Get queue length for the IEx process
