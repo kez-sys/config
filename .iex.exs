@@ -40,8 +40,8 @@ alive =
     "*" <>
     IO.ANSI.reset()
 
-default_prompt = prefix <> "[" <> counter <> "]" <> " " <> last
-alive_prompt = prefix <> "[" <> counter <> "]" <> " " <> alive <> last
+default_prompt = prefix <> "(" <> counter <> ")" <> " " <> last
+alive_prompt = prefix <> "(" <> counter <> ")" <> " " <> alive <> last
 
 inspect_limit = 5_000
 history_size = 100
