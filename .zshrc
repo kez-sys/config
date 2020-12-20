@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 export UPDATE_ZSH_DAYS=3
 DISABLE_AUTO_TITLE="true"
 DISABLE_AUTO_UPDATE=true
-plugins=(zsh-syntax-highlighting git vi-mode mix tmux ssh-agent)
+plugins=(zsh-syntax-highlighting git vi-mode mix tmux ssh-agent elixir)
 ZSH_THEME="kez"
 source $ZSH/oh-my-zsh.sh
 
@@ -75,3 +75,7 @@ export DISPLAY=$(awk '/nameserver/ {print $2}' /etc/resolv.conf):0.0
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Elixir
+export ERL_AFLAGS="-kernel shell_history enabled"
+
