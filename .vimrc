@@ -368,7 +368,7 @@ nnoremap <silent><nowait> <C-j> :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <C-k>  :<C-u>CocPrev<CR>
 
 " Coc Restart
-nnoremap <silent><nowait> <space>c<space>  :<C-u>CocRestart<cr>
+nnoremap <silent><nowait> <space>z  :<C-u>CocRestart<cr>
 
 
 " Lightline
