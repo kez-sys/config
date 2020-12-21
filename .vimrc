@@ -344,7 +344,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-" Mappings for CoCList
+" CoCList Mappings
 
 " Show all diagnostics.
 nnoremap <silent><nowait> <space>aC  :<C-u>CocList diagnostics<cr>
@@ -366,6 +366,9 @@ nnoremap <silent><nowait> <C-j> :<C-u>CocNext<CR>
 
 " Do default action for previous item.
 nnoremap <silent><nowait> <C-k>  :<C-u>CocPrev<CR>
+
+" Coc Restart
+nnoremap <silent><nowait> <space>c<space>  :<C-u>CocRestart<cr>
 
 
 " Lightline
