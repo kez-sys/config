@@ -388,5 +388,9 @@ set laststatus=2
 autocmd BufWritePre *.ejs :setfiletype html
 autocmd BufWritePost *.ejs :setfiletype jst
 
+" Elixir .eex fix
+autocmd BufWritePre *.eex :setfiletype html
+autocmd BufWritePost *.eex :setfiletype eelixir
+
 " Elixir-Mix format
 let g:mix_format_on_save = 1

@@ -9,7 +9,9 @@
     "ejs"
   ],
   "emmet.includeLanguages": {
-    "jst": "html"
+    "jst": "html",
+    "eelixir": "html"
   },
   "elixirLS.dialyzerEnabled": false
 }
+
