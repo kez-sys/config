@@ -42,6 +42,7 @@ alias mv="mv -v"
 alias mkdir="mkdir -v"
 alias qopw="vim $kfiles/Dump/template"
 alias utyr="vim $kfiles/Dump/d.list"
+alias winterm="vim /mnt/c/Users/kjsf/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"
 alias explo='explorer.exe .'
 alias vmshut='cmd.exe | wsl.exe --shutdown'
 alias win~='/mnt/c/Users/kjsf'
