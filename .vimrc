@@ -22,6 +22,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-grepper'
 Plug 'mhinz/vim-mix-format'
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
@@ -394,3 +395,7 @@ autocmd BufWritePost *.eex :setfiletype eelixir
 
 " Elixir-Mix format
 let g:mix_format_on_save = 1
+
+" Vimwiki
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
