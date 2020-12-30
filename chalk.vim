@@ -1,11 +1,8 @@
-" Vim color scheme
+" Kez's Vim color scheme
 " Name:         chalk.vim
-" Author:       Konnor Rogers <konnor7414@gmail.com>
-" Version:      1.0
+" Original Author:       Konnor Rogers <konnor7414@gmail.com>
+" Version:      2.0
 " GetLatestVimScripts: 1891 1 :AutoInstall: chalk.vim
-
-" Based on the VividChalk colorscheme made by Tpope which is based on Vibrant Ink
-" Distributable under the same terms as Vim itself (see :help license)
 
 if has("gui_running") && &background !=# 'dark'
     set background=dark
@@ -119,6 +116,7 @@ call s:hibg("VisualNOS" ,"#444444","DarkBlue",81)
 highlight WarningMsg    guifg=Red ctermfg=Red
 highlight Error         ctermbg=DarkRed
 highlight SpellBad      ctermbg=DarkRed
+
 " FIXME: Comments
 highlight SpellRare     ctermbg=DarkMagenta
 highlight SpellCap      ctermbg=DarkBlue
@@ -149,25 +147,28 @@ if !has("gui_mac")
     hi Comment gui=italic
 endif
 hi Identifier cterm=none
+
 " Commented numbers at the end are *old* 256 color values
-call s:hifg("Comment"        ,"#9933CC","DarkMagenta",34) " 92
+call s:hifg("Comment"        ,"#C2C1C2","DarkMagenta",34) " 92
+
 " 26 instead?
 call s:hifg("Constant"       ,"#339999","DarkCyan",21) " 30
 call s:hifg("String"         ,"#66FF00","LightGreen",44,82) " 82
 call s:hifg("Identifier"     ,"#FFCC00","Yellow",72) " 220
 call s:hifg("Statement"      ,"#FF6600","Brown",68) " 202
-call s:hifg("PreProc"        ,"#AAFFFF","LightCyan",47) " 213
-call s:hifg("Type"           ,"#AAAA77","Grey",57) " 101
+call s:hifg("PreProc"        ,"#BB9457","LightCyan",47) " 213
+call s:hifg("Type"           ,"#F51AA4","Grey",57) " 101
 call s:hifg("Special"        ,"#33AA00","DarkGreen",24) " 7
 call s:hifg("Regexp"         ,"#44B4CC","DarkCyan",21) " 74
-call s:hifg("rubyMethod"     ,"#DDE93D","Yellow",77) " 191
+call s:hifg("rubyMethod"     ,"#FFB100","Yellow",77) " 191
+call s:hifg("Todo"           ,"#000000","Black",77) " 191
+call s:hifg("Fixme"           ,"#000000","Black",77) " 191
 
 " My modifications
-
 highlight StatusLine   guibg=#aabbee guifg=#000000 ctermbg=14 ctermfg=0 cterm=NONE gui=NONE
 highlight StatusLineNC guibg=#aabbee guifg=#000000 ctermbg=14 ctermfg=0 cterm=inverse gui=inverse
 
-highlight MatchParen ctermbg=8 ctermfg=2 cterm=NONE guibg=#111111 guifg=#66FF00 gui=NONE
+highlight MatchParen ctermbg=8 ctermfg=2 cterm=NONE guibg=#111111 guifg=#D00000 gui=NONE
 
 " Various columns
 highlight VertSplit ctermbg=8 ctermfg=8 guibg=#111111 guifg=#111111
