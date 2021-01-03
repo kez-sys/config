@@ -149,16 +149,16 @@ endif
 hi Identifier cterm=none
 
 " Commented numbers at the end are *old* 256 color values
-call s:hifg("Comment"        ,"#C2C1C2","DarkMagenta",34) " 92
+call s:hifg("Comment"        ,"#414361","DarkMagenta",34) " 92
 
 " 26 instead?
-call s:hifg("Constant"       ,"#339999","DarkCyan",21) " 30
-call s:hifg("String"         ,"#66FF00","LightGreen",44,82) " 82
-call s:hifg("Identifier"     ,"#FFCC00","Yellow",72) " 220
-call s:hifg("Statement"      ,"#FF6600","Brown",68) " 202
-call s:hifg("PreProc"        ,"#BB9457","LightCyan",47) " 213
-call s:hifg("Type"           ,"#F51AA4","Grey",57) " 101
-call s:hifg("Special"        ,"#33AA00","DarkGreen",24) " 7
+call s:hifg("Constant"       ,"#FF00FF","DarkCyan",21) " 30
+call s:hifg("String"         ,"#00BFFF","LightGreen",44,82) " 82
+call s:hifg("Identifier"     ,"#FFDF00","Yellow",72) " 220
+call s:hifg("Statement"      ,"#DAA520","Brown",68) " 202
+call s:hifg("PreProc"        ,"#C2C1C2","LightCyan",47) " 213
+call s:hifg("Type"           ,"#F75C03","Grey",57) " 101
+call s:hifg("Special"        ,"#87CEEB","DarkGreen",24) " 7
 call s:hifg("Regexp"         ,"#44B4CC","DarkCyan",21) " 74
 call s:hifg("rubyMethod"     ,"#FFB100","Yellow",77) " 191
 call s:hifg("Todo"           ,"#000000","Black",77) " 191
@@ -168,7 +168,7 @@ call s:hifg("Fixme"           ,"#000000","Black",77) " 191
 highlight StatusLine   guibg=#aabbee guifg=#000000 ctermbg=14 ctermfg=0 cterm=NONE gui=NONE
 highlight StatusLineNC guibg=#aabbee guifg=#000000 ctermbg=14 ctermfg=0 cterm=inverse gui=inverse
 
-highlight MatchParen ctermbg=8 ctermfg=2 cterm=NONE guibg=#111111 guifg=#D00000 gui=NONE
+highlight MatchParen ctermbg=8 ctermfg=2 cterm=NONE guibg=#111111 guifg=#FFFFFF gui=NONE
 
 " Various columns
 highlight VertSplit ctermbg=8 ctermfg=8 guibg=#111111 guifg=#111111
