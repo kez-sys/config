@@ -3,7 +3,7 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
 
-Plug 'junegunn/goyo.vim'
+" Plug 'junegunn/goyo.vim'
 " Plug 'slashmili/alchemist.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'preservim/nerdtree'
