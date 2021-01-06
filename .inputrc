@@ -1,0 +1,5 @@
+# Kez's inputrc
+
+# Set vi-mode for most shells like psql etc.
+set editing-mode vi
+set keymap vi-command
