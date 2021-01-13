@@ -87,10 +87,12 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+nnoremap <C-t> <C-w>T
 inoremap <C-h> <C-w>h
 inoremap <C-j> <C-w>j
 inoremap <C-k> <C-w>k
 inoremap <C-l> <C-w>l
+inoremap <C-t> <C-w>T
 
 " Use leader w and leader s for split windows
 nnoremap <leader>w <C-w>v<C-w>l
@@ -372,29 +374,33 @@ nnoremap <silent><nowait> <C-k>  :<C-u>CocPrev<CR>
 " Coc Restart
 nnoremap <silent><nowait> <space>z  :<C-u>CocRestart<cr>
 
+" Coc status line integration
+function! CocCurrentFunction()
+    return get(b:, 'coc_current_function', '')
+endfunction
 
 " Lightline
 let g:lightline = {
   \ 'active': {
       \ 'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified', 'cocstatus', 'currentfunction' ] ]
       \ },
       \ 'component_function': {
+      \   'cocstatus': 'coc#status',
+      \   'currentfunction': 'CocCurrentFunction',
       \   'gitbranch': 'gitbranch#name'
       \ },
       \ 'colorscheme': 'simpleblack',
       \ }
 set laststatus=2
 
-" Templating engine fix
+" Templating workaround
 autocmd BufWritePre *.ejs :setfiletype html
 autocmd BufWritePost *.ejs :setfiletype jst
-
-" Elixir .eex fix
 autocmd BufWritePre *.eex :setfiletype html
 autocmd BufWritePost *.eex :setfiletype eelixir
 
-" Elixir-Mix format
+" Elixir mix format
 let g:mix_format_on_save = 1
 
 " Vimwiki
