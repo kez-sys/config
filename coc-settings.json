@@ -6,7 +6,8 @@
     "html",
     "javascript",
     "jst",
-    "ejs"
+    "ejs",
+    "eelixir"
   ],
   "emmet.includeLanguages": {
     "jst": "html",

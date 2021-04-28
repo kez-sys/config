@@ -5,11 +5,11 @@ call plug#begin('~/.vim/plugged')
 
 " Plug 'junegunn/goyo.vim'
 " Plug 'slashmili/alchemist.vim'
-Plug 'elixir-editors/vim-elixir'
+"Plug 'elixir-editors/vim-elixir'
 Plug 'preservim/nerdtree'
 Plug 'itchyny/vim-gitbranch'
 Plug 'itchyny/lightline.vim'
-Plug 'mbbill/undotree'
+"Plug 'mbbill/undotree'
 Plug 'tpope/vim-surround'
 Plug 'andrewradev/tagalong.vim'
 Plug 'preservim/nerdcommenter'
@@ -235,6 +235,7 @@ let g:coc_global_extensions = [
   \ 'coc-css',
   \ 'coc-emmet',
   \ 'coc-sql',
+  \ 'coc-docker'
   \ ]
 
 " TextEdit might fail if hidden is not set.
@@ -397,8 +398,9 @@ set laststatus=2
 " Templating workaround
 autocmd BufWritePre *.ejs :setfiletype html
 autocmd BufWritePost *.ejs :setfiletype jst
-autocmd BufWritePre *.eex :setfiletype html
+autocmd BufWritePre *.eex :setfiletype  html
 autocmd BufWritePost *.eex :setfiletype eelixir
+
 
 " Elixir mix format
 let g:mix_format_on_save = 1

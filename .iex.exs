@@ -57,7 +57,15 @@ IEx.configure(
   colors: [
     eval_result: eval_result,
     eval_error: eval_error,
-    eval_info: eval_info
+    eval_info: eval_info,
+    syntax_colors: [
+      number: :magenta,
+      atom: :cyan,
+      string: :green,
+      boolean: :magenta,
+      nil: :magenta
+    ],
+    width: 30
   ],
   default_prompt: default_prompt,
   alive_prompt: alive_prompt

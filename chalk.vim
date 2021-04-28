@@ -81,7 +81,7 @@ hi link diffRemoved             Statement
 hi link diffLine                PreProc
 hi link diffSubname             Comment
 
-call s:hifg("Normal","#EEEEEE","White",87)
+call s:hifg("Normal","#f2f2f2","White",87)
 if &background == "light" || has("gui_running")
     hi Normal guibg=Black ctermbg=Black
 else
@@ -149,14 +149,14 @@ endif
 hi Identifier cterm=none
 
 " Commented numbers at the end are *old* 256 color values
-call s:hifg("Comment"        ,"#414361","DarkMagenta",34) " 92
+call s:hifg("Comment"        ,"#666666","DarkMagenta",34) " 92
 
 " 26 instead?
 call s:hifg("Constant"       ,"#FF00FF","DarkCyan",21) " 30
 call s:hifg("String"         ,"#00BFFF","LightGreen",44,82) " 82
 call s:hifg("Identifier"     ,"#FFDF00","Yellow",72) " 220
 call s:hifg("Statement"      ,"#DAA520","Brown",68) " 202
-call s:hifg("PreProc"        ,"#C2C1C2","LightCyan",47) " 213
+call s:hifg("PreProc"        ,"#cccccc","LightCyan",47) " 213
 call s:hifg("Type"           ,"#F75C03","Grey",57) " 101
 call s:hifg("Special"        ,"#87CEEB","DarkGreen",24) " 7
 call s:hifg("Regexp"         ,"#44B4CC","DarkCyan",21) " 74
