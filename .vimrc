@@ -43,6 +43,8 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 
+set noerrorbells
+
 set clipboard=unnamedplus
 set mouse=a
 
@@ -54,10 +56,6 @@ set expandtab
 " Fix vim startup replace mode
 set t_u7=
 
-" Cursor line Insert mode
-" set cursorline
-:autocmd InsertEnter * set cul
-:autocmd InsertLeave * set nocul
 
 set wildmenu
 set wildchar=<TAB>
@@ -158,6 +156,30 @@ if (has("termguicolors"))
 
   set termguicolors
 endif
+
+" Cursor settings
+
+" Cursor line in insert mode
+:autocmd InsertEnter * set cul
+:autocmd InsertLeave * set nocul
+
+" Cursor in terminal
+  " https://vim.fandom.com/wiki/Configuring_the_cursor
+  " 1 or 0 -> blinking block
+  " 2 solid block
+  " 3 -> blinking underscore
+  " 4 solid underscore
+  " Recent versions of xterm (282 or above) also support
+  " 5 -> blinking vertical bar
+  " 6 -> solid vertical bar
+
+if &term =~ '^xterm'
+  " normal mode
+  let &t_EI .= "\<Esc>[0 q"
+  " insert mode
+  let &t_SI .= "\<Esc>[0 q"
+endif
+
 
 " Set colorscheme
 colorscheme chalk
