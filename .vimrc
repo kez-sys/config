@@ -26,10 +26,10 @@ Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
-" Set leader key to a comma (;)
+" Set leader key to space
 let mapleader = " "
 
-" Basic Config
+" Sets and basic config
 syntax on
 filetype plugin indent on
 
@@ -157,21 +157,21 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-" Cursor settings
+" Cursor Settings
 
 " Cursor line in insert mode
 :autocmd InsertEnter * set cul
 :autocmd InsertLeave * set nocul
 
 " Cursor in terminal
-  " https://vim.fandom.com/wiki/Configuring_the_cursor
-  " 1 or 0 -> blinking block
-  " 2 solid block
-  " 3 -> blinking underscore
-  " 4 solid underscore
-  " Recent versions of xterm (282 or above) also support
-  " 5 -> blinking vertical bar
-  " 6 -> solid vertical bar
+" https://vim.fandom.com/wiki/Configuring_the_cursor
+" 1 or 0 -> blinking block
+" 2 solid block
+" 3 -> blinking underscore
+" 4 solid underscore
+" Recent versions of xterm (282 or above) also support
+" 5 -> blinking vertical bar
+" 6 -> solid vertical bar
 
 if &term =~ '^xterm'
   " normal mode
