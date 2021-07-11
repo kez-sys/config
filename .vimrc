@@ -3,13 +3,9 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
 
-" Plug 'junegunn/goyo.vim'
-" Plug 'slashmili/alchemist.vim'
-"Plug 'elixir-editors/vim-elixir'
 Plug 'preservim/nerdtree'
 Plug 'itchyny/vim-gitbranch'
 Plug 'itchyny/lightline.vim'
-"Plug 'mbbill/undotree'
 Plug 'tpope/vim-surround'
 Plug 'andrewradev/tagalong.vim'
 Plug 'preservim/nerdcommenter'
@@ -23,6 +19,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-grepper'
 Plug 'mhinz/vim-mix-format'
 Plug 'vimwiki/vimwiki'
+" Plug 'junegunn/goyo.vim'
+" Plug 'slashmili/alchemist.vim'
+" Plug 'elixir-editors/vim-elixir'
+" Plug 'mbbill/undotree'
 
 call plug#end()
 
@@ -56,13 +56,12 @@ set expandtab
 " Fix vim startup replace mode
 set t_u7=
 
-
 set wildmenu
 set wildchar=<TAB>
 
 set splitright splitbelow
 
-" Search
+" Set search
 set ignorecase
 set smartcase
 set gdefault
@@ -103,10 +102,10 @@ nnoremap } <C-w>>
 nnoremap { <C-w><lt>
 nnoremap = <C-w>=
 
-" Pwd
+" View pwd
 noremap <silent><nowait> <leader>p :pwd<CR>
 
-" vimrc
+" Edit vimrc
 noremap <silent><nowait> <leader>V :tabnew $MYVIMRC<CR>
 
 " Vimgrepper
@@ -180,6 +179,8 @@ if &term =~ '^xterm'
   let &t_SI .= "\<Esc>[0 q"
 endif
 
+set guicursor=
+
 
 " Set colorscheme
 colorscheme chalk
@@ -208,7 +209,7 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
-" FZF Mappings
+" Fzf mappings
 nnoremap <silent> <C-p> :Files <CR>
 nnoremap <silent> <Leader>f :Rg <CR>
 nnoremap <silent> <Leader><Enter> :Buffers<CR>

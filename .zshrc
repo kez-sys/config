@@ -9,7 +9,7 @@ plugins=(zsh-syntax-highlighting git vi-mode mix tmux ssh-agent elixir)
 ZSH_THEME="kez"
 source $ZSH/oh-my-zsh.sh
 
-# ZSH Highlighting
+# Zsh highlighting
 ZSH_HIGHLIGHT_STYLES[autodirectory]=fg=blue,bold
 ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=white
 ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=magenta,bold
@@ -25,7 +25,7 @@ ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=yellow,bold
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=yellow,bold
 ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]=fg=yellow,bold
 
-# nvm
+# Nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
@@ -71,7 +71,7 @@ bindkey '^e' edit-command-line
 # X server - may cause delay
 export DISPLAY=$(awk '/nameserver/ {print $2}' /etc/resolv.conf):0.0
 
-# fzf
+# Fzf
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
