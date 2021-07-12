@@ -23,8 +23,13 @@ nnoremap } <C-w>>
 nnoremap { <C-w><lt>
 nnoremap = <C-w>=
 
+" Visual mode move
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
 " View pwd
 noremap <silent><nowait> <leader>p :pwd<CR>
 
 " Edit vimrc
 noremap <silent><nowait> <leader>V :tabnew $MYVIMRC<CR>
+

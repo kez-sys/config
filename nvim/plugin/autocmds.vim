@@ -8,4 +8,8 @@
 autocmd Filetype * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Auto delete white space
-autocmd BufWritePre * %s/\s\+$//e
+augroup KJSF
+    autocmd!
+    autocmd BufWritePre * %s/\s\+$//e
+    autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
+augroup END
