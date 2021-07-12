@@ -4,7 +4,7 @@ set nu
 set relativenumber
 " set termguicolors
 
-set nowrap
+" set nowrap
 set nocompatible
 set showmode
 set showcmd
