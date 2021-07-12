@@ -5,11 +5,11 @@ export ZSH=$HOME/.oh-my-zsh
 export UPDATE_ZSH_DAYS=3
 DISABLE_AUTO_TITLE="true"
 DISABLE_AUTO_UPDATE=true
-plugins=(zsh-syntax-highlighting git vi-mode mix tmux ssh-agent elixir)
+plugins=(zsh-syntax-highlighting git vi-mode mix tmux ssh-agent elixir asdf)
 ZSH_THEME="kez"
 source $ZSH/oh-my-zsh.sh
 
-# Zsh highlighting
+# Highlighting
 ZSH_HIGHLIGHT_STYLES[autodirectory]=fg=blue,bold
 ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=white
 ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=magenta,bold
@@ -24,10 +24,6 @@ ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=yellow,bold
 ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=yellow,bold
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=yellow,bold
 ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]=fg=yellow,bold
-
-# Nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Export
 export kfiles='/mnt/k'
