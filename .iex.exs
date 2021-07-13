@@ -31,7 +31,7 @@ counter =
 
 # info = IO.ANSI.yellow() <> "#{queue_length.()}" <> IO.ANSI.reset()
 
-last = IO.ANSI.bright() <> IO.ANSI.white() <> "$" <> IO.ANSI.reset()
+last = IO.ANSI.bright() <> IO.ANSI.white() <> ">" <> IO.ANSI.reset()
 
 alive =
   IO.ANSI.bright() <>
@@ -40,8 +40,8 @@ alive =
     "*" <>
     IO.ANSI.reset()
 
-default_prompt = prefix <> "(" <> counter <> ")" <> " " <> last
-alive_prompt = prefix <> "(" <> counter <> ")" <> " " <> alive <> last
+default_prompt = prefix <> "[" <> counter <> "]" <> " " <> last
+alive_prompt = prefix <> "[" <> counter <> "]" <> " " <> alive <> last
 
 inspect_limit = 5_000
 history_size = 100
