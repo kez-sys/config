@@ -32,7 +32,7 @@ alias kfiles=$kfiles
 alias cfiles=$cfiles
 
 # Aliases
-alias vim="nvim"
+# alias vim="nvim"
 alias cp="cp -v"
 alias rm="rm -v"
 alias mv="mv -v"
@@ -44,6 +44,11 @@ alias vmshut='cmd.exe | wsl.exe --shutdown'
 alias win~='/mnt/c/Users/kjsf'
 alias desk~='/mnt/c/Users/kjsf/Desktop'
 alias graph='git log --all --decorate --oneline --graph'
+
+# Docker aliases
+alias dr="docker-compose run --rm web"
+alias drs="docker-compose run --rm --service-ports web"
+alias dcu="docker-compose up"
 
 # Use vim keys n tab complete menu:
 zstyle ':completion:*' list-colors
