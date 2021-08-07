@@ -33,9 +33,9 @@ alias cfiles=$cfiles
 
 # Aliases
 # alias vim="nvim"
-alias cp="cp -v"
-alias rm="rm -v"
-alias mv="mv -v"
+alias cp="cp -iv"
+alias rm="rm -iv"
+alias mv="mv -iv"
 alias mkdir="mkdir -v"
 alias qopw="vim $kfiles/Dump/template"
 alias utyr="vim $kfiles/Dump/d.list"
@@ -78,6 +78,7 @@ export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Elixir
+# Elixir && Erlang
 export ERL_AFLAGS="-kernel shell_history enabled"
+export KERL_BUILD_DOCS=yes
 
