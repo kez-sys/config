@@ -26,10 +26,10 @@ Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
-" Set leader key to space
+" Set leader key
 let mapleader = " "
 
-" Sets and basic config
+" Settings and basic config
 syntax on
 filetype plugin indent on
 
@@ -53,22 +53,23 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
-" Fix vim startup replace mode
-set t_u7=
-
 set wildmenu
 set wildchar=<TAB>
 
 set splitright splitbelow
 
+set scrolloff=8
+
+" Fix vim startup replace mode
+set t_u7=
+
 " Set search
 set ignorecase
 set smartcase
 set gdefault
-
 set incsearch
 set showmatch
-set hlsearch
+set nohlsearch
 
 " Disable Automatic comment on newline
 autocmd Filetype * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -77,7 +78,7 @@ autocmd Filetype * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 nnoremap <F5> :UndotreeToggle<cr>
 
 " Auto delete white space
-autocmd BufWritePre * %s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e
 
 " Window navigations
 nnoremap <C-h> <C-w>h
@@ -107,6 +108,14 @@ noremap <silent><nowait> <leader>p :pwd<CR>
 
 " Edit vimrc
 noremap <silent><nowait> <leader>V :tabnew $MYVIMRC<CR>
+
+" Move lines up or down visual mode
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" Move lines indention
+vnoremap > >gv
+vnoremap < <gv
 
 " Vimgrepper
 let g:grepper={}
@@ -162,16 +171,7 @@ endif
 :autocmd InsertEnter * set cul
 :autocmd InsertLeave * set nocul
 
-" Cursor in terminal
-" https://vim.fandom.com/wiki/Configuring_the_cursor
-" 1 or 0 -> blinking block
-" 2 solid block
-" 3 -> blinking underscore
-" 4 solid underscore
-" Recent versions of xterm (282 or above) also support
-" 5 -> blinking vertical bar
-" 6 -> solid vertical bar
-
+set guicursor=
 if &term =~ '^xterm'
   " normal mode
   let &t_EI .= "\<Esc>[0 q"
@@ -179,12 +179,14 @@ if &term =~ '^xterm'
   let &t_SI .= "\<Esc>[0 q"
 endif
 
-set guicursor=
-
 
 " Set colorscheme
-colorscheme chalk
 set background=dark
+colorscheme chalk
+
+" Set bg transparent overides colorscheme
+hi Normal guibg=NONE ctermbg=NONE
+hi LineNr guibg=NONE
 
 " Fzf
 let $FZF_DEFAULT_OPTS = '-m --bind ctrl-a:select-all'
@@ -211,11 +213,11 @@ let g:fzf_colors =
 
 " Fzf mappings
 nnoremap <silent> <C-p> :Files <CR>
-nnoremap <silent> <Leader>f :Rg <CR>
+nnoremap <silent> <Leader>F :Rg <CR>
 nnoremap <silent> <Leader><Enter> :Buffers<CR>
 nnoremap <silent> <Leader>C :Commands<CR>
 nnoremap <silent> <Leader>l :BLines<CR>
-nnoremap <silent> <Leader>L :Lines<CR>
+nnoremap <silent> <Leader>f :Lines<CR>
 nnoremap <silent> <Leader>M :Maps<CR>
 nnoremap <silent> <Leader>H :Helptags<CR>
 nnoremap <silent> <Leader>h :History<CR>
