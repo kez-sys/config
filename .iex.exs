@@ -40,8 +40,8 @@ alive =
     "*" <>
     IO.ANSI.reset()
 
-default_prompt = prefix <> "(" <> counter <> ")" <> " " <> last
-alive_prompt = prefix <> "(" <> counter <> ")" <> " " <> alive <> last
+default_prompt = prefix <> "(" <> counter <> ")" <> last
+alive_prompt = prefix <> "(" <> counter <> ")" <> alive <> last
 
 inspect_limit = 5_000
 history_size = 100
@@ -49,21 +49,26 @@ history_size = 100
 eval_result = [:green, :bright]
 eval_error = [:red, :bright]
 eval_info = [:white, :bright]
+eval_warning = [:yellow, :bright]
 
 # Configuring IEx
 IEx.configure(
-  inspect: [limit: inspect_limit],
+  inspect: [
+    limit: inspect_limit,
+    pretty: true
+  ],
   history_size: history_size,
   colors: [
     eval_result: eval_result,
     eval_error: eval_error,
     eval_info: eval_info,
+    eval_warning: eval_warning,
     syntax_colors: [
       number: :magenta,
       atom: :cyan,
       string: :green,
       boolean: :magenta,
-      nil: :magenta
+      nil: :red
     ],
     width: 30
   ],
