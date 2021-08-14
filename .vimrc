@@ -423,8 +423,10 @@ set laststatus=2
 " Templating workaround
 autocmd BufWritePre *.ejs :setfiletype html
 autocmd BufWritePost *.ejs :setfiletype jst
-autocmd BufWritePre *.eex :setfiletype  html
-autocmd BufWritePost *.eex :setfiletype eelixir
+autocmd BufWritePre *.html.eex :setfiletype  html
+autocmd BufWritePost *.html.eex :setfiletype eelixir
+autocmd BufWritePre *.json.eex :setfiletype  json
+autocmd BufWritePost *.json.eex :setfiletype eelixir
 
 
 " Elixir mix format
