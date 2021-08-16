@@ -19,6 +19,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-grepper'
 Plug 'mhinz/vim-mix-format'
 Plug 'vimwiki/vimwiki'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 " Plug 'junegunn/goyo.vim'
 " Plug 'slashmili/alchemist.vim'
 " Plug 'elixir-editors/vim-elixir'
@@ -424,9 +425,8 @@ set laststatus=2
 autocmd BufWritePre *.ejs :setfiletype html
 autocmd BufWritePost *.ejs :setfiletype jst
 autocmd BufWritePre *.html.eex :setfiletype  html
-autocmd BufWritePost *.html.eex :setfiletype eelixir
 autocmd BufWritePre *.json.eex :setfiletype  json
-autocmd BufWritePost *.json.eex :setfiletype eelixir
+autocmd BufWritePost *.eex :setfiletype eelixir
 
 
 " Elixir mix format
