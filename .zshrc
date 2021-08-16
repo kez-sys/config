@@ -5,7 +5,17 @@ export ZSH=$HOME/.oh-my-zsh
 export UPDATE_ZSH_DAYS=3
 DISABLE_AUTO_TITLE="true"
 DISABLE_AUTO_UPDATE=true
-plugins=(zsh-syntax-highlighting git vi-mode mix tmux ssh-agent elixir asdf)
+plugins=(
+  git
+  tmux
+  vi-mode
+  mix
+  ssh-agent
+  elixir
+  asdf
+  zsh-syntax-highlighting
+)
+
 ZSH_THEME="kez"
 source $ZSH/oh-my-zsh.sh
 
@@ -82,3 +92,5 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export ERL_AFLAGS="-kernel shell_history enabled"
 export KERL_BUILD_DOCS=yes
 
+# Zsh autocomplete
+autoload -Uz compinit && compinit
