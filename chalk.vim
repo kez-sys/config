@@ -1,8 +1,6 @@
 " Kez's Vim color scheme
-" Name:         chalk.vim
-" Original Author:       Konnor Rogers <konnor7414@gmail.com>
-" Version:      2.0
-" GetLatestVimScripts: 1891 1 :AutoInstall: chalk.vim
+" Name:                 chalk.vim
+" Original Author:      Konnor Rogers <konnor7414@gmail.com>
 
 if has("gui_running") && &background !=# 'dark'
     set background=dark
@@ -185,4 +183,4 @@ highlight PmenuThumb ctermbg=15 guibg=#808080
 
 highlight WhiteSpace ctermfg=15 guifg=#808080
 
-highlight link NERDTreeDir Constant
+highlight link NERDTreeDir Identifier
