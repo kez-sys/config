@@ -150,7 +150,7 @@ hi Identifier cterm=none
 call s:hifg("Comment"        ,"#666666","DarkMagenta",34) " 92
 
 " 26 instead?
-call s:hifg("Constant"       ,"#FF00FF","DarkCyan",21) " 30
+call s:hifg("Constant"       ,"#e535ab","GraphQLPink",21) " 30
 call s:hifg("String"         ,"#00BFFF","LightGreen",44,82) " 82
 call s:hifg("Identifier"     ,"#FFDF00","Yellow",72) " 220
 call s:hifg("Statement"      ,"#DAA520","Brown",68) " 202
