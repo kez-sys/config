@@ -435,3 +435,7 @@ let g:mix_format_on_save = 1
 " Vimwiki
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
+
+" Markdown preview
+nnoremap <silent> <Leader>m :silent! MarkdownPreview<CR>
+
