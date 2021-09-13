@@ -20,6 +20,7 @@ Plug 'mhinz/vim-grepper'
 Plug 'mhinz/vim-mix-format'
 Plug 'vimwiki/vimwiki'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'sainnhe/sonokai'
 " Plug 'junegunn/goyo.vim'
 " Plug 'slashmili/alchemist.vim'
 " Plug 'elixir-editors/vim-elixir'
@@ -166,6 +167,14 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+" The configuration options should be placed before `colorscheme sonokai`.
+let g:sonokai_style = 'shusia'
+let g:sonokai_enable_italic_comment = 1
+
+" Set colorscheme
+set background=dark
+colorscheme sonokai
+
 " Cursor Settings
 
 " Cursor line in insert mode
@@ -180,14 +189,9 @@ if &term =~ '^xterm'
   let &t_SI .= "\<Esc>[0 q"
 endif
 
-
-" Set colorscheme
-set background=dark
-colorscheme chalk
-
 " Set bg transparent overides colorscheme
-hi Normal guibg=NONE ctermbg=NONE
-hi LineNr guibg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
+" hi LineNr guibg=NONE
 
 " Fzf
 let $FZF_DEFAULT_OPTS = '-m --bind ctrl-a:select-all'
@@ -417,7 +421,7 @@ let g:lightline = {
       \   'currentfunction': 'CocCurrentFunction',
       \   'gitbranch': 'gitbranch#name'
       \ },
-      \ 'colorscheme': 'simpleblack',
+      \ 'colorscheme': 'sonokai',
       \ }
 set laststatus=2
 
@@ -428,7 +432,6 @@ autocmd BufWritePre *.html.eex :setfiletype  html
 autocmd BufWritePre *.json.eex :setfiletype  json
 autocmd BufWritePost *.eex :setfiletype eelixir
 
-
 " Elixir mix format
 let g:mix_format_on_save = 1
 
@@ -438,4 +441,3 @@ let g:vimwiki_list = [{'path': '~/vimwiki/',
 
 " Markdown preview
 nnoremap <silent> <Leader>m :silent! MarkdownPreview<CR>
-
