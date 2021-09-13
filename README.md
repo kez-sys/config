@@ -2,7 +2,7 @@
 
 *A collection of configuration files I use for my current development environment.*
 
-> Operating System: Windows 10 - WSL2 Ubuntu
+> Operating System: Linux - Ubuntu
 
 ### References:
 
