@@ -4,10 +4,7 @@
 Application.put_env(:elixir, :ansi_enabled, true)
 
 # Log IEx config
-IO.puts(
-  IO.ANSI.blink_slow() <>
-    "\nUsing Kez's IEx config\n" <> IO.ANSI.reset()
-)
+IO.puts("\nUsing Kez's IEx config\n")
 
 # Get queue length for the IEx process
 # This is fun to see while playing with nodes
@@ -36,7 +33,6 @@ last = IO.ANSI.bright() <> IO.ANSI.white() <> ">" <> IO.ANSI.reset()
 alive =
   IO.ANSI.bright() <>
     IO.ANSI.yellow() <>
-    IO.ANSI.blink_rapid() <>
     "*" <>
     IO.ANSI.reset()
 
