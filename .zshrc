@@ -1,4 +1,4 @@
-# Kez's zsh
+# Kez's zsh config
 
 # Oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
