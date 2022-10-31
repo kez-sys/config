@@ -48,7 +48,7 @@ set backspace=indent,eol,start
 set noerrorbells
 
 set clipboard=unnamedplus
-set mouse=a
+" set mouse=a
 
 set tabstop=2
 set shiftwidth=2
