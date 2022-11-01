@@ -18,6 +18,7 @@ plugins=(
   zsh-syntax-highlighting
 )
 
+zstyle :omz:plugins:ssh-agent quiet yes
 ZSH_THEME="kez"
 source $ZSH/oh-my-zsh.sh
 
